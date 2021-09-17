@@ -6,5 +6,13 @@ app = Flask(__name__)
 def homepage():
     return render_template("main.html")
 
+@app.route('/signUp')
+def signUp():
+    return("welcome to Yunmeng!")
+
+@app.route('/info')
+def info():
+    return("welcome to Gusu!")
+
 if __name__ == "__main__":
     app.run()
