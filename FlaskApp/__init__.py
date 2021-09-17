@@ -8,11 +8,11 @@ def homepage():
 
 @app.route('/signUp')
 def signUp():
-    return("welcome to Yunmeng!")
+    return render_template("signUp.html")
 
 @app.route('/info')
 def info():
-    return("welcome to Gusu!")
+    return render_template("info.html")
 
 if __name__ == "__main__":
     app.run()
