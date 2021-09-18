@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Sign Up</a>
+          <a class="nav-link active" aria-current="page" href="/">Sign In</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="signUp">Sign Up</a>
@@ -41,16 +41,15 @@
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required value="{{request.from.uname}}">
+    <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required value="{{request.form.psw}}">
+    <input type="password" placeholder="Enter Password" name="psw" required>
 
     <button type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
-    <p>{{error}}</p>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
