@@ -1,13 +1,23 @@
 from flask import Flask, render_template, flash, request, url_for, redirect
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=["GET","POST"])
 def homepage():
-    try:
-        
-        return render_template("main.html")
+    error = ''
+    try:        
+        if request.method == "POST":	
+            attempted_username = request.form['username']
+            attempted_password = request.form['password']
+            if attempted_username == "admin" and attempted_password == "password":
+                return redirect(url_for('info'))
+				
+            else:
+                error = "Invalid credentials. Try Again."
+
+
+        return render_template("main1.html")
     except Exception as e:
-        return render_template("main.html")
+        return render_template("main1.html")
 
 @app.route('/signUp')
 def signUp():
