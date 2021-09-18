@@ -1,33 +1,36 @@
 from flask import Flask, render_template, request, url_for, redirect
-from dbconnect import connection
+from dbConnect import connection
 
 app = Flask(__name__)
 
-@app.route('/', methods-['GET', 'POST'])
+@app.route('/', methods-["GET","POST"])
+#@app.route('/')
 def homepage():
      error = ''
+    return render_template("main.html", error = error)
+
     try:
 
         if request.method == "POST":
 
-            attempted_username = request.form['uname']
-            attempted_password = request.form['psw']
+           attempted_username = request.form['uname']
+           attempted_password = request.form['psw']
 
-            if attempted_username == "admin" and attempted_password == "password":
-                return redirect(url_for('info'))
+           if attempted_username == "admin" and attempted_password == "password":
+               return redirect(url_for('info'))
 
-            else:
-                error = "Invalid credentials. Try Again."
+           else:
+               error = "Invalid credentials. Try Again."
 
         return render_template("main.html", error = error)
-
-    except Exception as e:
-        return render_template("main.html", error = error)
+return render_template("main.html")
+   except Exception as e:
+       return render_template("main.html", error = error)
 
 @app.route('/signUp',  methods-['GET', 'POST'])
 def signUp():
     try:
-        c, conn = connection()
+       c, conn = connection()
         return render_template("signUp.html")
     except Exception as e:
         return(str(e))
