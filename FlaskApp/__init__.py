@@ -1,6 +1,6 @@
 from flask import Flask, render_template, flash, request, url_for, redirect, session
 from dbconnect import connection
-from wtforms import Form
+from wtforms import Form, BooleanField, TextField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from MySQLdb import escape_string as thwart
 import gc
@@ -39,7 +39,7 @@ class SignUp(Form):
     accept_tos = BooleanField('I accept the Terms of Service', [validators.Required()])
     
 
-@app.route('/signUp')
+@app.route('/signUp', methods=["GET","POST"])
 def signUp():
     try:
         form = SignUp(request.form)
@@ -72,7 +72,7 @@ def signUp():
                 session['username'] = username
 
                 return redirect(url_for('info'))
-        return render_template("signUp.html", form=from)
+        return render_template("signUp.html", form=form)
     except Exception as e:
         return(str(e))
 
