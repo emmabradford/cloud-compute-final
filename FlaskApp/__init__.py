@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect
+from dbconnect import connection
 
 app = Flask(__name__)
 
@@ -23,9 +24,13 @@ def homepage():
     except Exception as e:
         return render_template("main.html", error = error)
 
-@app.route('/signUp')
+@app.route('/signUp',  methods-['GET', 'POST'])
 def signUp():
-    return render_template("signUp.html")
+    try:
+        c, conn = connection()
+        return render_template("signUp.html")
+    except Exception as e:
+        return(str(e))
 
 @app.route('/info')
 def info():
