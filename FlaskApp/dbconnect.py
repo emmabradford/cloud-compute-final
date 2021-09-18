@@ -1,6 +1,6 @@
 import MySQLdb
 
-dev conncetion():
+def connection():
     conn = MySQLdb.connect(host="localhost",
                            user = "root",
                            passwd = "root",
