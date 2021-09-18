@@ -1,12 +1,13 @@
-#from flask import Flask, render_template, flash, request, url_for, redirect
-from flask import Flask, render_template
+from flask import Flask, render_template, flash, request, url_for, redirect
 app = Flask(__name__)
 
-#@app.route('/', methods-['GET', 'POST'])
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def homepage():
-    #return("Welcome to Yunmeng")
-    return render_template("main.html")
+    try:
+        
+        return render_template("main.html")
+    except Exception as e:
+        return render_template("main.html")
 
 @app.route('/signUp')
 def signUp():
