@@ -1,0 +1,4 @@
+#username, password, email, givenName, familyName
+joe, test, joe@gmail.com, joe, smith
+allen, 1234, allen@gmail.com, allen, smith
+bill, pass, bill@gmail.com, bill, smith
