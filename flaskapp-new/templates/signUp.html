@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Cloud Compute Project 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+          <a class="navbar-brand" href="/">Welcome MDZS
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="signUp">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="info">Info</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<body>
+<div class = "container">
+		<h4>Register</h4>
+		<br>
+		{% from "_formhelpers.html" import render_field %}
+		<form method=post action="/signUp">
+			<dl>
+				{{render_field(form.familyName)}}
+				{{render_field(form.givenName)}}
+				{{render_field(form.username)}}
+				{{render_field(form.email)}}
+				{{render_field(form.password)}}
+				{{render_field(form.confirm)}}
+				{{render_field(form.accept_tos)}}
+			</dl>
+			<p><input type=submit value=Register></p>
+		</form>		
+		{% if error %}
+			<p class="error"><strong>Error:</strong>{{error}}</p>
+		{% endif %}
+
+	</div>
+</body>
+
+</html>

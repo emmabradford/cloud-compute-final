@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Cloud Compute Project 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+          <a class="navbar-brand" href="/">Welcome MDZS
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Sign In</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+
+<body>
+	<div class="container">
+		<br>
+		<h4>Please Login:</h4>
+		<br>
+		<form action="" class="form-inline" method="post">
+			<input type="text" class="form-control" placeholder = "Username" name="username" value="{{request.form.username}}">
+			<input type="password" class="form-control" placeholder = "Password" name="password" value="{{request.form.password}}">
+			<input class="btn btn-default" type="submit" value="Login">
+		</form>
+	</div>
+</body>
+</html>
