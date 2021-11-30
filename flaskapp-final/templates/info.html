@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <title>Cloud Compute Project 1</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+          <a class="navbar-brand" href="/">Welcome MDZS
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="info">Info</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+
+<body>
+<!--
+	<h1>Welcome to Gusu, {{uname}}!</h1>
+    <h2> Full name (Given Family): </h2>
+    <h3> {{given}} {{family}}</h3>
+    <h2>Email:</h2>
+    <h3>{{email}}</h3>
+-->
+	<h1>Welcome</h1>
+	
+	 <button onclick="window.location.href='/query1'">HOUSEHOLDS by HSHD_NUM</button>
+	 <button onclick="window.location.href='/query2'">TRANSACTIONS by BASKET_NUM</button>
+	 <button onclick="window.location.href='/query3'">TRANSACTIONS by DATE</button>
+	 <button onclick="window.location.href='/query4'">TRANSACTIONS by PRODUCT_NUM</button>
+	 <button onclick="window.location.href='/query5'">PRODUCTS by DEPARTMENT</button>
+	 <button onclick="window.location.href='/query6'">PRODUCTS by COMMODITY</button>
+	
+	</br><button onclick="window.location.href='/upload'">UPLOAD NEW DATA</button>
+
+
+
+	</br></br></br>
+	We used Agile Methodology when completing our project. We mainly used short sprints for the tasks that were mapped out in the planning stage. Upon completion of each task, we would test. This was the main cycle in the process, testing and developing. After we got a final product done, we examined it and made adjustments. What worked well was the testing and developing cycles because we could rapidly iterate through the development together. What didn’t work was the planning phase because we tried to map out the entire project at once without revisiting our initial task delegating. If we would do it again we would revisit our tasks in the develop and test cycle during the project.
+	</br></br>
+	<h3>Question 1</h3>
+	<strong>a)</strong> Households do spend more money over time. We calculated this by taking a randomly selected group of households and calculated their spending totals on a yearly basis. We saw that the yearly totals trended upward.
+	</br><strong>b)</strong> We found that the following categories are growing: Pet, Gift, Bakery, Alcohol, and Household. We found the following categories are shrinking: Floral, Auto, Deli, Toys, Electronics.
+	</br><strong>c)</strong> We could re-engage customers by lowering prices in the specific areas that are shrinking.
+	</br><h3>Question 2</h3>
+	<strong>a)</strong> The factors that appear to affect customer engagement are household size.
+	</br><strong>b)</strong> We saw that household size improves customer engagement for a multitude of reasons. The certain categories we saw a gain in categories that were related to Food like Canned Goods, Frozen Food, and Meat. The categories we saw suffer with a large household size was Outdoor, Holiday, and Electronics.
+
+
+
+</body>
+
+
+</html>
